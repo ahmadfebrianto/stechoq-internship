@@ -2,4 +2,11 @@
     <string name="app_name">Project 1</string>
     <string name="title_layout1">Layout 1</string>
     <string name="title_layout2">Layout 2</string>
+    <string name="name">Name</string>
+    <string name="nim">NIM</string>
+    <string name="email">Email</string>
+    <string name="masuk">Masuk</string>
+    <string name="daftar">Daftar</string>
+    <string name="pendaftaran">Pendaftaran</string>
+    <string name="start">Start</string>
 </resources>

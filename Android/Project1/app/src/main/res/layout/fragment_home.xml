@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:layout_marginStart="20dp"
-            android:text="Masuk"
+            android:text="@string/masuk"
             android:textColor="@color/white"
             android:textSize="22sp" />
 
@@ -57,7 +57,7 @@
         android:background="#00A859"
         android:gravity="start|center"
         android:padding="10dp"
-        android:text="NIM"
+        android:text="@string/nim"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,7 +72,7 @@
         android:background="#3E4095"
         android:gravity="center"
         android:padding="10dp"
-        android:text="Start"
+        android:text="@string/start"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
