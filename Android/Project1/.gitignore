@@ -1,6 +1,3 @@
-**/**/out
-**/**/*.iml
-**/**/.idea
 *.iml
 .gradle
 /local.properties
