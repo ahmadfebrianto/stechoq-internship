@@ -7,10 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.project1.data.MovieList
 import com.example.project1.databinding.FragmentMovieBinding
 
-class MovieFragment: Fragment() {
+class MovieFragment : Fragment() {
     lateinit var binding: FragmentMovieBinding
     private lateinit var recyclerView: RecyclerView
 
@@ -27,12 +26,19 @@ class MovieFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val movieList = MovieList.getMovies()
-        val adapter = MovieAdapter(movieList)
-        recyclerView = binding.rvMovieList
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.setHasFixedSize(true)
+        val viewModel = MovieViewModel()
+        viewModel.getMovies()
+        viewModel._movies.observe(viewLifecycleOwner, {
+            if (it.isSuccessful) {
+                val movies = it.body()?.movies!!
+                val adapter = MovieAdapter(movies)
+                recyclerView = binding.rvMovieList
+                recyclerView.adapter = adapter
+                recyclerView.layoutManager = LinearLayoutManager(context)
+                recyclerView.setHasFixedSize(true)
+            }
+        })
+
 
     }
 }

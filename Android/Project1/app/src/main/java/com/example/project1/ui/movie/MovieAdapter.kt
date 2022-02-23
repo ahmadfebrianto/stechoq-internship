@@ -12,7 +12,7 @@ class MovieAdapter(private val movieList: List<Movie>) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(movie: Movie) {
             binding.tvMovieTitle.text = movie.title
-            binding.tvMovieDescription.text = movie.description
+            binding.tvMovieReleaseDate.text = movie.releaseDate
         }
 
     }
