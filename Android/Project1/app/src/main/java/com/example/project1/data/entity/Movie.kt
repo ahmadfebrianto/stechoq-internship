@@ -9,8 +9,8 @@ data class MovieList(
 )
 
 data class Movie(
-    @SerializedName("id")
-    val id: Int,
+    @SerializedName("poster_path")
+    val poster: String,
 
     @SerializedName("title")
     val title: String,

@@ -1,10 +1,14 @@
 package com.example.project1.ui.movie
 
+import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.project1.data.entity.Movie
 import com.example.project1.databinding.ItemListBinding
+import kotlin.coroutines.coroutineContext
 
 class MovieAdapter(private val movieList: List<Movie>) :
     RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
@@ -13,6 +17,13 @@ class MovieAdapter(private val movieList: List<Movie>) :
         fun bind(movie: Movie) {
             binding.tvMovieTitle.text = movie.title
             binding.tvMovieReleaseDate.text = movie.releaseDate
+
+            val posterPath = "https://image.tmdb.org/t/p/original${movie.poster}"
+            Log.d("POSTER", posterPath)
+            Glide
+                .with(itemView.context)
+                .load(posterPath)
+                .into(binding.ivMoviePoster)
         }
 
     }
