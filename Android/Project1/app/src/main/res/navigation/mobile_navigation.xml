@@ -3,18 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_layout1">
 
     <fragment
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_layout1"
         android:name="com.example.project1.ui.layout1.Layout1Fragment"
         android:label="@string/title_layout1"
         tools:layout="@layout/fragment_layout1" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_layout2"
         android:name="com.example.project1.ui.layout2.Layout2Fragment"
         android:label="@string/title_layout2"
         tools:layout="@layout/fragment_layout2" />
+
+    <fragment
+        android:id="@+id/navigation_movies"
+        android:name="com.example.project1.ui.movie.MovieFragment"
+        android:label="@string/movies"
+        tools:layout="@layout/fragment_movie" />
 
 </navigation>
