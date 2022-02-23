@@ -18,11 +18,12 @@ class MovieAdapter(private val movieList: List<Movie>) :
             binding.tvMovieTitle.text = movie.title
             binding.tvMovieReleaseDate.text = movie.releaseDate
 
-            val posterPath = "https://image.tmdb.org/t/p/original${movie.poster}"
+            val posterPath = "https://image.tmdb.org/t/p/w154${movie.poster}"
             Log.d("POSTER", posterPath)
             Glide
                 .with(itemView.context)
                 .load(posterPath)
+                .centerCrop()
                 .into(binding.ivMoviePoster)
         }
 
